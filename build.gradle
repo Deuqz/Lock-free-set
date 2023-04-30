@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'LockFreeSet'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlinx:lincheck:2.17'
+    testImplementation 'junit:junit:4.12'
+}
+
+test {
+    jvmArgs("--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.util=ALL-UNNAMED")
+}
